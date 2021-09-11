@@ -3,18 +3,18 @@ import React, {useState, useEffect, ReactDOM} from "react"
 
 
 
-function Tasks(props){
+function Tasks(){
 
     // all of my states 
     const [taskState, setTaskState] = useState([])
     
     const [inputValue, setInputValue] = useState('')  
     // logic
-    function task(name) {
-        this.name = name
-        this.isComplete = false;
+    // function task(name) {
+    //     this.name = name
+    //     this.isComplete = false;
 
-      }
+    //   }
     
     const inputFunctionHandler = (event) => {
         event.preventDefault()
@@ -24,7 +24,11 @@ function Tasks(props){
     const submitTask = (e) =>{
         e.preventDefault();
         let temp = taskState;
-        temp.push(new task(inputValue))
+        const myNewObj = {
+            name: inputValue,
+            isComplete: false
+        }
+        temp.push(myNewObj)
         setTaskState(temp);
         setInputValue('');
         // console.log(taskState);
@@ -35,16 +39,18 @@ function Tasks(props){
         e.preventDefault();
     }
     
-    const checkBoxHandler = (position) => {
+    const liOnClick = (position) => {
         
-        console.log('test')
+        
 
 
       let temp =  taskState.map((element, index) => 
         (index === position ? !element.isComplete: element.isComplete));
     
-        console.log(taskState)
-        //  setTaskState(temp);
+        
+        // setTaskState(temp);
+        console.log(temp)
+        console.log('test3')
 
     }
 
@@ -52,9 +58,8 @@ function Tasks(props){
      return(  
         <div>
             <button >Delete</button>
-            <li>{element.name}</li>
-            <input className = "checkbox" type="checkbox" onChange = {checkBoxHandler(index)} defaultChecked = {element.isComplete}></input>
-        </div>
+            <li onClick = {liOnClick(index)}>{element.name}</li>
+        </div>// the (index) is what is causing the issue for some reason......
      )
     })
     // create a task logic
