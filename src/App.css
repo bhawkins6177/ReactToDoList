@@ -73,3 +73,48 @@
 .dropdown:hover .dropbtn {
   background-color: #3e8e41;
 }
+
+.tasks{
+  display: block;
+}
+.taskscrossed{
+  text-decoration: line-through;
+}
+#formAndInput{
+  display: flex;
+  gap: 65%;
+
+
+}
+#header{
+  display:flex;
+  background-color: #4044c9;
+  font-size: 40px;
+  color:whitesmoke
+}
+.taskDisplay{
+  display: flex;
+  flex-wrap: wrap;
+  background-color: white;
+  box-shadow: 0px 10px 20px rgb(64 68 201 / 20%);
+  border-radius: 24px;
+  height: 65vw;
+  width: 75vw;
+}
+.taskContent{
+  display: flex;
+    flex-direction: column;
+    background: white;
+    box-shadow: 0px 10px 20px rgb(64 68 201 / 20%);
+    border-radius: 24px;
+    padding: 32px;
+    height: 100px;
+    width: 100px;
+}
+.dltBtn{
+  background: #4044c9;
+  color: white;
+  height: 22px;
+  margin-right: 16px;
+  border-radius: 6px;
+}
